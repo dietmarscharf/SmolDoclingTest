@@ -1,0 +1,33 @@
+# Docling Core - Document Processing mit SmolDocling VLM
+docling>=2.0.0
+docling-core>=2.0.0
+docling-parse>=2.0.0
+
+# Ollama Python Client für LLM Integration
+ollama>=0.4.0
+
+# OCR Engines (Optional, SmolDocling kann OCR selbst)
+easyocr>=1.7.0
+
+# Core Dependencies
+numpy>=1.24.0
+Pillow>=10.0.0
+torch>=2.0.0  # Für GPU Support und SmolDocling
+torchvision>=0.15.0
+
+# Für bessere Performance
+accelerate>=0.25.0  # Hugging Face Accelerate für GPU
+transformers>=4.36.0  # Für SmolDocling Model
+
+# Utilities
+python-magic>=0.4.27  # Dateiformat-Erkennung
+tqdm>=4.66.0  # Progress bars
+colorama>=0.4.6  # Colored output
+
+# Optional für erweiterte Features
+pandas>=2.0.0  # Für Tabellen-Verarbeitung
+openpyxl>=3.1.0  # Excel Support
+python-docx>=1.1.0  # DOCX Support
+beautifulsoup4>=4.12.0  # HTML Parsing
+lxml>=4.9.0  # XML Support
+markdown>=3.5.0  # Markdown Processing

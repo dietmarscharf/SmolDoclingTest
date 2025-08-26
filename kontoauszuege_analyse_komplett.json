@@ -1,0 +1,118 @@
+{
+  "analysen": [
+    {
+      "datei": "Konto_Auszug_2022_0003_result.json",
+      "anfangssaldo": "391.214,64 EUR am 31.03.2022",
+      "endsaldo": "405.107,75 EUR am 29.04.2022",
+      "anzahl_transaktionen": 11,
+      "transaktionsarten": [
+        "Abrechnung",
+        "Entgeltabrechnung",
+        "Gutschriftseingang",
+        "Wertpapierabrechnung",
+        "Überweisung/Übertrag",
+        "Lastschr.Depotentgelt"
+      ],
+      "wertpapiere": [
+        "Tesla Inc. (WKN A1CX3T)"
+      ],
+      "besondere_transaktionen": [
+        "Gutschriftseingang von 37.000,00 EUR",
+        "Gutschriftseingang von 103.924,60 EUR",
+        "Gutschriftseingang von 41.989,54 EUR",
+        "Gutschriftseingang von 42.689,03 EUR",
+        "Überweisung/Übertrag von -20.000,00 EUR"
+      ],
+      "zeitraum": "01.04.2022 bis 29.04.2022",
+      "kontonummer": "21503990"
+    },
+    {
+      "datei": "Konto_Auszug_2022_0004_result.json",
+      "anfangssaldo": "405.107,75 EUR am 29.04.2022",
+      "endsaldo": "450.105,96 EUR um 20:03 Uhr am 31.05.2022",
+      "anzahl_transaktionen": 5,
+      "transaktionsarten": [
+        "Entgeltabrechnung",
+        "Überweisung/Übertrag",
+        "Gutschriftseingang",
+        "Wertpapierabrechnung",
+        "Kontostand"
+      ],
+      "wertpapiere": [
+        "WERTP.ABRECHNUNG 6059613800",
+        "DURCHLFD.SPERRBETRAEGE DEPOT 7274079",
+        "WKN A1CX3T"
+      ],
+      "besondere_transaktionen": [
+        "-23.700,00 EUR (Überweisung/Übertrag)",
+        "68.700,16 EUR (Gutschriftseingang)"
+      ],
+      "zeitraum": "von 01.04.2022 bis 31.05.2022",
+      "kontonummer": "21503990"
+    },
+    {
+      "datei": "Konto_Auszug_2022_0005_result.json",
+      "anfangssaldo": "450.105,96 EUR am 31.05.2022",
+      "endsaldo": "450.104,01 EUR um 20:02 Uhr am 30.06.2022",
+      "anzahl_transaktionen": 2,
+      "transaktionsarten": [
+        "Entgeltabrechnung"
+      ],
+      "wertpapiere": [],
+      "besondere_transaktionen": [
+        "Entgeltabrechnung von 1,95 EUR am 01.06.2022"
+      ],
+      "zeitraum": "von 01.06.2022 bis 30.06.2022",
+      "kontonummer": "21503990"
+    },
+    {
+      "datei": "Konto_Auszug_2022_0006_result.json",
+      "anfangssaldo": "450.104,01 EUR am 30.06.2022",
+      "endsaldo": "421.615,81 EUR am 29.07.2022",
+      "anzahl_transaktionen": 7,
+      "transaktionsarten": [
+        "Abrechnung",
+        "Entgeltabrechnung",
+        "Gutschriftseingang",
+        "Lastschriften",
+        "Wertpapierabrechnung",
+        "Übertrag von Girokonto auf Geldmarktkonto"
+      ],
+      "wertpapiere": [
+        "Tesla Inc. (WKN A1CX3T)"
+      ],
+      "besondere_transaktionen": [
+        "-46.887,97 EUR für Wertpapierabrechnung",
+        "-5,95 EUR für Lastschriften",
+        "18.500,00 EUR Gutschriftseingang"
+      ],
+      "zeitraum": "01.04.2022 bis 30.07.2022",
+      "kontonummer": "21503990"
+    },
+    {
+      "datei": "Konto_Auszug_2022_0007_result.json",
+      "anfangssaldo": "421.615,81 EUR am 29.07.2022",
+      "endsaldo": "350.029,11 EUR am 31.08.2022",
+      "anzahl_transaktionen": 6,
+      "transaktionsarten": [
+        "Wertpapierabrechnung",
+        "Entgeltabrechnung",
+        "Gutschriftseingang",
+        "Übertrag von Girokonto auf Geldmarktkonto"
+      ],
+      "wertpapiere": [
+        "Tesla Inc. (WKN A1CX3T)"
+      ],
+      "besondere_transaktionen": [
+        "-83.584,75 EUR (Wertpapierabrechnung)",
+        "-33.400,00 EUR (Wertpapierabrechnung)",
+        "43.000,00 EUR (Gutschriftseingang)",
+        "2.400,00 EUR (Gutschriftseingang)"
+      ],
+      "zeitraum": "von 01.08.2022 bis 31.08.2022",
+      "kontonummer": "21503990"
+    }
+  ],
+  "anzahl_dokumente": 5,
+  "timestamp": "1756161803.3344128"
+}

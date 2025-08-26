@@ -1,0 +1,760 @@
+{
+  "version": "4.0",
+  "beschreibung": "Erweiterte Analyse mit Transaktionskategorisierung, Valuta-Extraktion und qwen3:30b",
+  "model": "qwen3:8b",
+  "features": [
+    "Transaktionsart-Klassifizierung",
+    "Valuta-Datum Extraktion",
+    "WKN/ISIN Erkennung",
+    "Deutsches Zahlenformat",
+    "Erweiterte Kontodaten"
+  ],
+  "analysen": [
+    {
+      "datei": "Konto_Auszug_2022_0003_result.json",
+      "kontodaten": {
+        "kontonummer": "21503990",
+        "kontoinhaber": "BLUEITS GmbH",
+        "bank": "Sparkasse Amberg-Sulzbach",
+        "kontoart": "Geldmarktkonto"
+      },
+      "zeitraum": {
+        "von": "01.04.2022",
+        "bis": "29.04.2022"
+      },
+      "anfangssaldo": {
+        "betrag": 391214.64,
+        "betrag_original": "391.214,64 EUR",
+        "datum": "31.03.2022",
+        "beschreibung": "Kontostand am 31.03.2022, Auszug Nr. 2"
+      },
+      "endsaldo": {
+        "betrag": 405107.75,
+        "betrag_original": "405.107,75 EUR",
+        "datum": "29.04.2022",
+        "uhrzeit": "20:03",
+        "beschreibung": "Kontostand am 29.04.2022 um 20:03 Uhr"
+      },
+      "transaktionen": [
+        {
+          "nr": 1,
+          "buchungsdatum": "01.04.2022",
+          "valuta": null,
+          "art": "Verwahrentgelt",
+          "beschreibung": "Abrechnung 31.03.2022 -170,86 siehe Anlage Nr. 1",
+          "betrag": -170.86,
+          "betrag_original": "-170,86",
+          "details": {
+            "anlage_nr": "1",
+            "typ": "Abrechnung"
+          }
+        },
+        {
+          "nr": 2,
+          "buchungsdatum": "01.04.2022",
+          "valuta": null,
+          "art": "Gebühren",
+          "beschreibung": "Entgeltabrechnung -1,95 siehe Anlage Nr. 2",
+          "betrag": -1.95,
+          "betrag_original": "-1,95",
+          "details": {
+            "anlage_nr": "2",
+            "typ": "Entgeltabrechnung"
+          }
+        },
+        {
+          "nr": 3,
+          "buchungsdatum": "06.04.2022",
+          "valuta": null,
+          "art": "Gutschrift",
+          "beschreibung": "Gutschriftseingang 37.000,00 BLUEITS GMBH Übertrag von Girokonto auf Geldmark tkonto",
+          "betrag": 37000.0,
+          "betrag_original": "37.000,00"
+        },
+        {
+          "nr": 4,
+          "buchungsdatum": "07.04.2022",
+          "valuta": "08.04.2022",
+          "art": "Wertpapierkauf",
+          "beschreibung": "Wertpapierabrechnung / Wert: 08.04.2022 -101.046,00 SPK AMBERG-SULZ DEPOT 7274079 WERTP. ABRECHN. 08.04.22 000005633161700 WKN A1CX3T GESCH.ART KV TESLA INC. DL -,001 US88160R1014",
+          "betrag": -101046.0,
+          "betrag_original": "-101.046,00",
+          "wertpapier": {
+            "name": "TESLA INC. DL -,001",
+            "wkn": "A1CX3T",
+            "isin": "US88160R1014",
+            "geschaeftsart": "KV"
+          },
+          "depot_nr": "7274079"
+        },
+        {
+          "nr": 5,
+          "buchungsdatum": "07.04.2022",
+          "valuta": "08.04.2022",
+          "art": "Wertpapierkauf",
+          "beschreibung": "Wertpapierabrechnung / Wert: 08.04.2022 -100.480,00 SPK AMBERG-SULZ DEPOT 7274079 WERTP. ABRECHN. 08.04.22 000005633161701 WKN A1CX3T GESCH.ART KV TESLA INC. DL -,001 US88160R1014",
+          "betrag": -100480.0,
+          "betrag_original": "-100.480,00",
+          "wertpapier": {
+            "name": "TESLA INC. DL -,001",
+            "wkn": "A1CX3T",
+            "isin": "US88160R1014",
+            "geschaeftsart": "KV"
+          },
+          "depot_nr": "7274079"
+        },
+        {
+          "nr": 6,
+          "buchungsdatum": "07.04.2022",
+          "valuta": null,
+          "art": "Gutschrift",
+          "beschreibung": "Gutschriftseingang 103.924,60 DURCHLFD.SPERRBETRAEGE DEPOT 7274079 WERTPAPIERABRECHNUNG WKN A1CX3T VV TESLA INC.DL",
+          "betrag": 103924.6,
+          "betrag_original": "103.924,60",
+          "wertpapier": {
+            "wkn": "A1CX3T",
+            "isin": "SPERRBETRAEG"
+          }
+        },
+        {
+          "nr": 7,
+          "buchungsdatum": "08.04.2022",
+          "valuta": null,
+          "art": "Gutschrift",
+          "beschreibung": "Gutschriftseingang 10.000,00 BLUEITS GMBH",
+          "betrag": 10000.0,
+          "betrag_original": "10.000,00"
+        },
+        {
+          "nr": 8,
+          "buchungsdatum": "12.04.2022",
+          "valuta": "14.04.2022",
+          "art": "Lastschrift",
+          "beschreibung": "Lastschr.Depotentgelt / Wert: 14.04.2022 -11,25 SPK AMBERG-SULZ DEPOTENTGELT 7274079 DEPOTENTGELT VOM 01.01.2022 bis 31.03.2022",
+          "betrag": -11.25,
+          "betrag_original": "-11,25",
+          "details": {
+            "anlage_nr": "2",
+            "typ": "Depotentgelt"
+          },
+          "wertpapier": {
+            "isin": "DEPOTENTGELT"
+          }
+        },
+        {
+          "nr": 9,
+          "buchungsdatum": "28.04.2022",
+          "valuta": null,
+          "art": "Gutschrift",
+          "beschreibung": "Gutschriftseingang 41.989,54 DURCHLFD. SPERRBETRÄGE DEPOTNR. 7274079 WKN A1CX3T ORDERNR. 5885460500 VERKAUF",
+          "betrag": 41989.54,
+          "betrag_original": "41.989,54",
+          "wertpapier": {
+            "wkn": "A1CX3T"
+          }
+        },
+        {
+          "nr": 10,
+          "buchungsdatum": "29.04.2022",
+          "valuta": null,
+          "art": "Überweisung ausgehend",
+          "beschreibung": "Überweisung/Übertrag -20.000,00 BLUEITS GmbH Kontoübertrag",
+          "betrag": -20000.0,
+          "betrag_original": "-20.000,00"
+        },
+        {
+          "nr": 11,
+          "buchungsdatum": "29.04.2022",
+          "valuta": "29.04.2022",
+          "art": "Gutschrift",
+          "beschreibung": "Gutschriftseingang 42.689,03 SPK AMBERG-SULZ DEPOT 7274079 WERTP. ABRECHN. 29.04.22 000005849461100 WKN A1CX3T GESCH.ART VV TESLA INC. DL -,001 US88160R1014",
+          "betrag": 42689.03,
+          "betrag_original": "42.689,03",
+          "wertpapier": {
+            "wkn": "A1CX3T",
+            "isin": "US88160R1014"
+          }
+        }
+      ],
+      "zusammenfassung": {
+        "anzahl_transaktionen": 11,
+        "transaktionen_summe": 13893.11,
+        "berechneter_endsaldo": 405107.75,
+        "saldo_korrekt": true,
+        "differenz": 0.0
+      },
+      "transaktionsarten_uebersicht": {
+        "Wertpapierkauf": 2,
+        "Wertpapierverkauf": 0,
+        "Überweisungen": 1,
+        "Gutschriften": 5,
+        "Gebühren": 2
+      },
+      "wertpapiere": [
+        {
+          "name": "TESLA INC.",
+          "wkn": "A1CX3T",
+          "isin": "US88160R1014",
+          "depot": "7274079"
+        }
+      ],
+      "validierung": {
+        "anfangssaldo": 391214.64,
+        "transaktionen_summe": 13893.11,
+        "berechneter_endsaldo": 405107.75,
+        "tatsaechlicher_endsaldo": 405107.75,
+        "differenz": 0.0,
+        "saldo_korrekt": true
+      }
+    },
+    {
+      "datei": "Konto_Auszug_2022_0004_result.json",
+      "kontodaten": {
+        "kontonummer": "21503990",
+        "kontoinhaber": "BLUEITS GmbH",
+        "bank": "Sparkasse Amberg-Sulzbach",
+        "kontoart": "Geldmarktkonto"
+      },
+      "zeitraum": {
+        "von": "01.04.2022",
+        "bis": "29.04.2022"
+      },
+      "anfangssaldo": {
+        "betrag": 391214.64,
+        "betrag_original": "391.214,64 EUR",
+        "datum": "31.03.2022",
+        "beschreibung": "Kontostand am 31.03.2022, Auszug Nr. 2"
+      },
+      "endsaldo": {
+        "betrag": 405107.75,
+        "betrag_original": "405.107,75 EUR",
+        "datum": "29.04.2022",
+        "uhrzeit": "20:03",
+        "beschreibung": "Kontostand am 29.04.2022 um 20:03 Uhr"
+      },
+      "transaktionen": [
+        {
+          "nr": 1,
+          "buchungsdatum": "01.04.2022",
+          "valuta": "30.04.2022",
+          "art": "Gebühren",
+          "beschreibung": "Entgeltabrechnung / Wert: 30.04.2022 -1,95",
+          "betrag": -1.95,
+          "betrag_original": "-1,95",
+          "details": {
+            "anlage_nr": "1",
+            "typ": "Entgeltabrechnung"
+          }
+        },
+        {
+          "nr": 2,
+          "buchungsdatum": "16.05.2022",
+          "valuta": "30.04.2022",
+          "art": "Überweisung ausgehend",
+          "beschreibung": "Überweisung/Übertrag -23.700,00 BLUEITS GmbH Kontoübertrag",
+          "betrag": -23700.0,
+          "betrag_original": "-23.700,00"
+        },
+        {
+          "nr": 3,
+          "buchungsdatum": "16.05.2022",
+          "valuta": "30.04.2022",
+          "art": "Gutschrift",
+          "beschreibung": "Gutschriftseingang 68.700,16 DURCHLFD.SPERRBETRAEGE DEPOT 7274079 WERTP.ABRECHNUNG 6059613800 WKN A1CX3T",
+          "betrag": 68700.16,
+          "betrag_original": "68.700,16",
+          "wertpapier": {
+            "wkn": "A1CX3T",
+            "isin": "SPERRBETRAEG"
+          }
+        },
+        {
+          "nr": 4,
+          "buchungsdatum": "16.05.2022",
+          "valuta": "30.04.2022",
+          "art": "Wertpapierkauf",
+          "beschreibung": "DURCHLFD.SPERRBETRAEGE DEPOT 7274079 WERTP.ABRECHNUNG 6059613800 WKN A1CX3T",
+          "betrag": -101046.0,
+          "betrag_original": "-101.046,00",
+          "wertpapier": {
+            "name": "TESLA INC.",
+            "wkn": "A1CX3T",
+            "isin": "SPERRBETRAEG",
+            "geschaeftsart": "KV"
+          },
+          "depot_nr": "7274079"
+        }
+      ],
+      "zusammenfassung": {
+        "anzahl_transaktionen": 4,
+        "transaktionen_summe": -23700.0,
+        "berechneter_endsaldo": 405107.75,
+        "saldo_korrekt": false,
+        "differenz": 23700.0
+      },
+      "transaktionsarten_uebersicht": {
+        "Gebühren": 1,
+        "Überweisungen": 1,
+        "Gutschriften": 1,
+        "Wertpapierkauf": 1
+      },
+      "wertpapiere": [
+        {
+          "name": "TESLA INC.",
+          "wkn": "A1CX3T",
+          "isin": "US88160R1014",
+          "depot": "7274079"
+        }
+      ],
+      "validierung": {
+        "anfangssaldo": 391214.64,
+        "transaktionen_summe": -56047.79,
+        "berechneter_endsaldo": 335166.85,
+        "tatsaechlicher_endsaldo": 405107.75,
+        "differenz": 69940.9,
+        "saldo_korrekt": false
+      }
+    },
+    {
+      "datei": "Konto_Auszug_2022_0005_result.json",
+      "kontodaten": {
+        "kontonummer": "21503990",
+        "kontoinhaber": "BLUEITS GmbH",
+        "bank": "Sparkasse Amberg-Sulzbach",
+        "kontoart": "Geldmarktkonto"
+      },
+      "zeitraum": {
+        "von": "01.04.2022",
+        "bis": "29.04.2022"
+      },
+      "anfangssaldo": {
+        "betrag": 391214.64,
+        "betrag_original": "391.214,64 EUR",
+        "datum": "31.03.2022",
+        "beschreibung": "Kontostand am 31.03.2022, Auszug Nr. 2"
+      },
+      "endsaldo": {
+        "betrag": 405107.75,
+        "betrag_original": "405.107,75 EUR",
+        "datum": "29.04.2022",
+        "uhrzeit": "20:03",
+        "beschreibung": "Kontostand am 29.04.2022 um 20:03 Uhr"
+      },
+      "transaktionen": [
+        {
+          "nr": 1,
+          "buchungsdatum": "01.04.2022",
+          "valuta": null,
+          "art": "Gebühren",
+          "beschreibung": "Entgeltabrechnung -1,95",
+          "betrag": -1.95,
+          "betrag_original": "-1,95",
+          "details": {
+            "anlage_nr": "1",
+            "typ": "Entgeltabrechnung"
+          }
+        },
+        {
+          "nr": 2,
+          "buchungsdatum": "01.06.2022",
+          "valuta": null,
+          "art": "Gebühren",
+          "beschreibung": "Entgeltabschluss: Anlage 1",
+          "betrag": -1.95,
+          "betrag_original": "-1,95",
+          "details": {
+            "anlage_nr": "1",
+            "typ": "Entgeltabschluss"
+          }
+        },
+        {
+          "nr": 3,
+          "buchungsdatum": "01.06.2022",
+          "valuta": null,
+          "art": "Gebühren",
+          "beschreibung": "Entgelte vom 30.04.2022 bis 31.05.2022 1,95-",
+          "betrag": -1.95,
+          "betrag_original": "-1,95",
+          "details": {
+            "zeitraum": "30.04.2022 bis 31.05.2022",
+            "typ": "Entgeltabrechnung"
+          }
+        },
+        {
+          "nr": 4,
+          "buchungsdatum": "01.06.2022",
+          "valuta": null,
+          "art": "Gebühren",
+          "beschreibung": "Abrechnung 31.05.2022 1,95-",
+          "betrag": -1.95,
+          "betrag_original": "-1,95",
+          "details": {
+            "datum": "31.05.2022",
+            "typ": "Entgeltab, Abrechnung"
+          }
+        },
+        {
+          "nr": 5,
+          "buchungsdatum": "01.06.2022",
+          "valuta": null,
+          "art": "Gebühren",
+          "beschreibung": "Grundpreis (Kontoführung) 1,95-",
+          "betrag": -1.95,
+          "betrag_original": "-1,95",
+          "details": {
+            "typ": "Grundpreis"
+          }
+        },
+        {
+          "nr": 6,
+          "buchungsdatum": "01.06.2022",
+          "valuta": null,
+          "art": "Gebühren",
+          "beschreibung": "Rechnungsnummer: 20220531-BY083-00009258054",
+          "betrag": 0.0,
+          "betrag_original": "0,00",
+          "details": {
+            "rechnungsnummer": "20220531-BY083-00009258054"
+          }
+        },
+        {
+          "nr": 7,
+          "buchungsdatum": "01.06.2022",
+          "valuta": null,
+          "art": "Gebühren",
+          "beschreibung": "Es handelt sich hierbei um eine umsatzsteuerfreie Leistung.",
+          "betrag": 0.0,
+          "betrag_original": "0,00",
+          "details": {
+            "beschreibung": "umsatzsteuerfreie Leistung"
+          }
+        },
+        {
+          "nr": 8,
+          "buchungsdatum": "01.06.2022",
+          "valuta": null,
+          "art": "Gebühren",
+          "beschreibung": "Einwendungen gegen den Kontoauszug richten Sie bitte unverzüglich an unsere Revisionsabteilung.",
+          "betrag": 0.0,
+          "betrag_original": "0,00",
+          "details": {
+            "beschreibung": "Einwendungen gegen Kontoauszug"
+          }
+        },
+        {
+          "nr": 9,
+          "buchungsdatum": "01.06.2022",
+          "valuta": null,
+          "art": "Gebühren",
+          "beschreibung": "Rechnungsabschlüsse gelten als genehmigt, sofern Sie innerhalb von sechs Wochen nach Zugang keine Einwendungen erheben.",
+          "betrag": 0.0,
+          "betrag_original": "0,00",
+          "details": {
+            "beschreibung": "Rechnungsabschlüsse genehmigt"
+          }
+        },
+        {
+          "nr": 10,
+          "buchungsdatum": "01.06.2022",
+          "valuta": null,
+          "art": "Gebühren",
+          "beschreibung": "Einwendungen gegen Rechnungsabschlüsse müssen der Sparkasse zugehen.",
+          "betrag": 0.0,
+          "betrag_original": "0,00",
+          "details": {
+            "beschreibung": "Einwendungen gegen Rechnungsabschlüsse"
+          }
+        },
+        {
+          "nr": 11,
+          "buchungsdatum": "01.06.2022",
+          "valuta": null,
+          "art": "Gebühren",
+          "beschreibung": "Gutschriften aus eingereichten Schecks, Lastschriften und anderen Einzugspapieren erfolgen unter dem Vorbehalt der Einlösung.",
+          "betrag": 0.0,
+          "betrag_original": "0,00",
+          "details": {
+            "beschreibung": "Gutschriften unter Vorbehalt"
+          }
+        }
+      ],
+      "zusammenfassung": {
+        "anzahl_transaktionen": 11,
+        "transaktionen_summe": -11.85,
+        "berechneter_endsaldo": 405107.75,
+        "saldo_korrekt": false,
+        "differenz": -11.85
+      },
+      "transaktionsarten_uebersicht": {
+        "Gebühren": 11
+      },
+      "wertpapiere": [],
+      "validierung": {
+        "anfangssaldo": 391214.64,
+        "transaktionen_summe": -9.75,
+        "berechneter_endsaldo": 391204.89,
+        "tatsaechlicher_endsaldo": 405107.75,
+        "differenz": 13902.86,
+        "saldo_korrekt": false
+      }
+    },
+    {
+      "datei": "Konto_Auszug_2022_0006_result.json",
+      "kontodaten": {
+        "kontonummer": "21503990",
+        "kontoinhaber": "BLUEITS GmbH",
+        "bank": "Sparkasse Amberg-Sulzbach",
+        "kontoart": "Geldmarktkonto"
+      },
+      "zeitraum": {
+        "von": "01.04.2022",
+        "bis": "29.07.2022"
+      },
+      "anfangssaldo": {
+        "betrag": 450102.06,
+        "betrag_original": "450.102,06 EUR",
+        "datum": "30.06.2022",
+        "beschreibung": "Kontostand am 30.06.2022, Auszug Nr. 5"
+      },
+      "endsaldo": {
+        "betrag": 421615.81,
+        "betrag_original": "421.615,81 EUR",
+        "datum": "29.07.2022",
+        "uhrzeit": "20:07",
+        "beschreibung": "Kontostand am 29.07.2022 um 20:07 Uhr"
+      },
+      "transaktionen": [
+        {
+          "nr": 1,
+          "buchungsdatum": "01.07.2022",
+          "valuta": "01.07.2022",
+          "art": "Abrechnung",
+          "beschreibung": "Abrechnung 30.06.2022 -392,33",
+          "betrag": -392.33,
+          "betrag_original": "-392,33",
+          "details": {
+            "anlage_nr": "1",
+            "typ": "Abrechnung"
+          }
+        },
+        {
+          "nr": 2,
+          "buchungsdatum": "01.07.2022",
+          "valuta": "01.07.2022",
+          "art": "Gebühren",
+          "beschreibung": "Entgeltabrechnung -1,95",
+          "betrag": -1.95,
+          "betrag_original": "-1,95",
+          "details": {
+            "anlage_nr": "2",
+            "typ": "Entgeltabrechnung"
+          }
+        },
+        {
+          "nr": 3,
+          "buchungsdatum": "05.07.2022",
+          "valuta": null,
+          "art": "Gutschrift",
+          "beschreibung": "Gutschriftseingang 300,00",
+          "betrag": 300.0,
+          "betrag_original": "300,00"
+        },
+        {
+          "nr": 4,
+          "buchungsdatum": "12.07.2022",
+          "valuta": "14.07.2022",
+          "art": "Lastschrift",
+          "beschreibung": "Lastschr.Depotentgelt / Wert: 14.07.2022 -5,95",
+          "betrag": -5.95,
+          "betrag_original": "-5,95"
+        },
+        {
+          "nr": 5,
+          "buchungsdatum": "28.07.2022",
+          "valuta": "29.07.2022",
+          "art": "Wertpapierabrechnung",
+          "beschreibung": "Wertpapierabre, Wert: 29.07.2022 -46.887,97",
+          "betrag": -46887.97,
+          "betrag_original": "-46.887,97",
+          "wertpapier": {
+            "name": "TESLA INC. DL -,001",
+            "wkn": "A1CX3T",
+            "isin": "US88160R1014",
+            "geschaeftsart": "KV"
+          },
+          "depot_nr": "7274079"
+        },
+        {
+          "nr": 6,
+          "buchungsdatum": "28.07.2022",
+          "valuta": null,
+          "art": "Gutschrift",
+          "beschreibung": "Gutschriftseingang 18.500,00",
+          "betrag": 18500.0,
+          "betrag_original": "18.500,00"
+        },
+        {
+          "nr": 7,
+          "buchungsdatum": "28.07.2022",
+          "valuta": null,
+          "art": "Überweisung eingehend",
+          "beschreibung": "BLUEITS GMBH Übertrag von Girokonto auf Geldmark tkonto",
+          "betrag": 18500.0,
+          "betrag_original": "18.500,00"
+        }
+      ],
+      "zusammenfassung": {
+        "anzahl_transaktionen": 7,
+        "transaktionen_summe": -46887.97,
+        "berechneter_endsaldo": 421615.81,
+        "saldo_korrekt": true,
+        "differenz": 0.0
+      },
+      "transaktionsarten_uebersicht": {
+        "Abrechnung": 2,
+        "Gebühren": 2,
+        "Gutschriften": 2,
+        "Lastschrift": 1,
+        "Wertpapierabrechnung": 1,
+        "Überweisungen": 1
+      },
+      "wertpapiere": [
+        {
+          "name": "TESLA INC. DL -,001",
+          "wkn": "A1CX3T",
+          "isin": "US88160R1014",
+          "depot": "7274079"
+        }
+      ],
+      "validierung": {
+        "anfangssaldo": 450102.06,
+        "transaktionen_summe": -9988.2,
+        "berechneter_endsaldo": 440113.86,
+        "tatsaechlicher_endsaldo": 421615.81,
+        "differenz": -18498.05,
+        "saldo_korrekt": false
+      }
+    },
+    {
+      "datei": "Konto_Auszug_2022_0007_result.json",
+      "kontodaten": {
+        "kontonummer": "21503990",
+        "kontoinhaber": "BLUEITS GmbH",
+        "bank": "Sparkasse Amberg-Sulzbach",
+        "kontoart": "Geldmarktkonto"
+      },
+      "zeitraum": {
+        "von": "01.08.2022",
+        "bis": "31.08.2022"
+      },
+      "anfangssaldo": {
+        "betrag": 421615.81,
+        "betrag_original": "421.615,81 EUR",
+        "datum": "29.07.2022",
+        "beschreibung": "Kontostand am 29.07.2022, Auszug Nr. 6"
+      },
+      "endsaldo": {
+        "betrag": 350029.11,
+        "betrag_original": "350.029,11 EUR",
+        "datum": "31.08.2022",
+        "uhrzeit": "20:09",
+        "beschreibung": "Kontostand am 31.08.2022 um 20:09 Uhr"
+      },
+      "transaktionen": [
+        {
+          "nr": 1,
+          "buchungsdatum": "01.08.2022",
+          "valuta": "02.08.2022",
+          "art": "Wertpapierkauf",
+          "beschreibung": "Wertpapierabrechnung / Wert: 02.08.2022 SPK AMBERG-SULZ DEPOT 7274079 WERTP. ABRECHN. 02.08.22 000006964675300 WKN A1CX3T GESCH.ART KV TESLA INC. DL -,001 US88160R1014",
+          "betrag": -83584.75,
+          "betrag_original": "-83.584,75",
+          "wertpapier": {
+            "name": "TESLA INC. DL -,001",
+            "wkn": "A1CX3T",
+            "isin": "US88160R1014",
+            "geschaeftsart": "KV"
+          },
+          "depot_nr": "7274079"
+        },
+        {
+          "nr": 2,
+          "buchungsdatum": "01.08.2022",
+          "valuta": "02.08.2022",
+          "art": "Wertpapierkauf",
+          "beschreibung": "Wertpapierabrechnung / Wert: 02.08.2022 SPK AMBERG-SULZ DEPOT 7274079 WERTP. ABRECHN. 02.08.22 000006964675301 WKN A1CX3T GESCH.ART KV TESLA INC. DL -,001 US88160R1014",
+          "betrag": -33400.0,
+          "betrag_original": "-33.400,00",
+          "wertpapier": {
+            "name": "TESLA INC. DL -,001",
+            "wkn": "A1CX3T",
+            "isin": "US88160R1014",
+            "geschaeftsart": "KV"
+          },
+          "depot_nr": "7274079"
+        },
+        {
+          "nr": 3,
+          "buchungsdatum": "01.08.2022",
+          "valuta": "30.07.2022",
+          "art": "Gebühren",
+          "beschreibung": "Entgeltabrechnung / Wert: 30.07.2022 -1,95 siehe Anlage Nr. 1",
+          "betrag": -1.95,
+          "betrag_original": "-1,95",
+          "details": {
+            "anlage_nr": "1",
+            "typ": "Entgeltabrechnung"
+          }
+        },
+        {
+          "nr": 4,
+          "buchungsdatum": "01.08.2022",
+          "valuta": null,
+          "art": "Gutschrift",
+          "beschreibung": "Gutschriftseingang 43.000,00 BLUEITS GMBH Übertrag von Girokonto auf Geldmark tkonto",
+          "betrag": 43000.0,
+          "betrag_original": "43.000,00"
+        },
+        {
+          "nr": 5,
+          "buchungsdatum": "09.08.2022",
+          "valuta": null,
+          "art": "Gutschrift",
+          "beschreibung": "Gutschriftseingang 2.400,00 BLUEITS GMBH Übertrag von Girokonto auf Geldmark tkonto",
+          "betrag": 2400.0,
+          "betrag_original": "2.400,00"
+        }
+      ],
+      "zusammenfassung": {
+        "anzahl_transaktionen": 5,
+        "transaktionen_summe": -120384.75,
+        "berechneter_endsaldo": 350029.11,
+        "saldo_korrekt": true,
+        "differenz": 0.0
+      },
+      "transaktionsarten_uebersicht": {
+        "Wertpapierkauf": 2,
+        "Gebühren": 1,
+        "Gutschriften": 2
+      },
+      "wertpapiere": [
+        {
+          "name": "TESLA INC. DL -,001",
+          "wkn": "A1CX3T",
+          "isin": "US88160R1014",
+          "depot": "7274079"
+        }
+      ],
+      "validierung": {
+        "anfangssaldo": 421615.81,
+        "transaktionen_summe": -71586.7,
+        "berechneter_endsaldo": 350029.11,
+        "tatsaechlicher_endsaldo": 350029.11,
+        "differenz": 0.0,
+        "saldo_korrekt": true
+      }
+    }
+  ],
+  "anzahl_dokumente": 5,
+  "erfolgreiche_pruefungen": 2
+}

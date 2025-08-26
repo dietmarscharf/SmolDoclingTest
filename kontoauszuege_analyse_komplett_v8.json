@@ -1,0 +1,476 @@
+{
+  "version": "8.0",
+  "beschreibung": "Duale Zahlenrepräsentation mit Konvertierungs-Validierung",
+  "model": "qwen3:8b",
+  "verbesserungen": [
+    "Duale Zahlenrepräsentation (String + Nummer)",
+    "Validierung jeder Zahlenkonvertierung",
+    "Automatische Korrektur falscher LLM-Konvertierungen",
+    "Detaillierte Konvertierungs-Reports",
+    "Robuste Fehlerbehandlung"
+  ],
+  "analysen": [
+    {
+      "datei": "Konto_Auszug_2022_0003_result.json",
+      "auszug_nummer": "3",
+      "anfangssaldo": {
+        "betrag_original": "405.107,75",
+        "betrag_nummer": 405107.75,
+        "datum": "29.04.2022",
+        "referenz_auszug": "3",
+        "beschreibung": "Kontostand am 29.04.2022, Auszug Nr. 3"
+      },
+      "endsaldo": {
+        "betrag_original": "405.107,75",
+        "betrag_nummer": 405107.75,
+        "datum": "29.04.2022",
+        "uhrzeit": "20:03",
+        "beschreibung": "Kontostand am 29.04.2022 um 20:03 Uhr"
+      },
+      "transaktionen": [],
+      "anzahl_transaktionen": 0,
+      "validierung": {
+        "anfangssaldo_nummer": 405107.75,
+        "transaktionen_summe_nummer": 13893.11,
+        "berechneter_endsaldo": 419000.86,
+        "dokument_endsaldo_nummer": 405107.75,
+        "differenz": -13893.11,
+        "validierung_ok": false
+      },
+      "conversion_validations": [
+        {
+          "original_string": "405.107,75",
+          "llm_converted": 405107.75,
+          "python_converted": 405107.75,
+          "conversion_match": true,
+          "difference": 0,
+          "field": "anfangssaldo"
+        },
+        {
+          "original_string": "405.107,75",
+          "llm_converted": 405107.75,
+          "python_converted": 405107.75,
+          "conversion_match": true,
+          "difference": 0,
+          "field": "endsaldo"
+        }
+      ],
+      "python_validierung": {
+        "anfangssaldo": 405107.75,
+        "endsaldo_aus_dokument": 405107.75,
+        "transaktionen_summe": 0.0,
+        "berechneter_endsaldo": 405107.75,
+        "differenz": 0.0,
+        "validierung_ok": true,
+        "formel": "405107.75 + 0.00 = 405107.75",
+        "conversion_errors": 0,
+        "total_conversions": 2
+      }
+    },
+    {
+      "datei": "Konto_Auszug_2022_0004_result.json",
+      "auszug_nummer": "4",
+      "anfangssaldo": {
+        "betrag_original": "405.107,75",
+        "betrag_nummer": 405107.75,
+        "datum": "29.04.2022",
+        "referenz_auszug": "3",
+        "beschreibung": "Kontostand am 29.04.2022, Auszug Nr. 3"
+      },
+      "endsaldo": {
+        "betrag_original": "450.105,96",
+        "betrag_nummer": 450105.96,
+        "datum": "31.05.2022",
+        "uhrzeit": "20:03",
+        "beschreibung": "Kontostand am 31.05.2022 um 20:03 Uhr"
+      },
+      "transaktionen": [],
+      "anzahl_transaktionen": 0,
+      "validierung": {
+        "anfangssaldo_nummer": 405107.75,
+        "transaktionen_summe_nummer": 44998.21,
+        "berechneter_endsaldo": 405107.75,
+        "dokument_endsaldo_nummer": 450105.96,
+        "differenz": 108.25,
+        "validierung_ok": false
+      },
+      "conversion_validations": [
+        {
+          "original_string": "405.107,75",
+          "llm_converted": 405107.75,
+          "python_converted": 405107.75,
+          "conversion_match": true,
+          "difference": 0,
+          "field": "anfangssaldo"
+        },
+        {
+          "original_string": "450.105,96",
+          "llm_converted": 450105.96,
+          "python_converted": 450105.96,
+          "conversion_match": true,
+          "difference": 0,
+          "field": "endsaldo"
+        }
+      ],
+      "python_validierung": {
+        "anfangssaldo": 405107.75,
+        "endsaldo_aus_dokument": 450105.96,
+        "transaktionen_summe": 0.0,
+        "berechneter_endsaldo": 405107.75,
+        "differenz": 44998.21,
+        "validierung_ok": false,
+        "formel": "405107.75 + 0.00 = 405107.75",
+        "conversion_errors": 0,
+        "total_conversions": 2
+      }
+    },
+    {
+      "datei": "Konto_Auszug_2022_0005_result.json",
+      "auszug_nummer": "5",
+      "anfangssaldo": {
+        "betrag_original": "450.105,96",
+        "betrag_nummer": 450105.96,
+        "datum": "31.05.2022",
+        "referenz_auszug": "4",
+        "beschreibung": "Kontostand am 31.05.2022, Auszug Nr. 4"
+      },
+      "endsaldo": {
+        "betrag_original": "450.104,01",
+        "betrag_nummer": 450104.01,
+        "datum": "30.06.2022",
+        "uhrzeit": "20:02",
+        "beschreibung": "Kontostand am 30.06.2022 um 20:02 Uhr"
+      },
+      "transaktionen": [
+        {
+          "datum": "01.06.2022",
+          "beschreibung": "Entgeltabrechnung",
+          "betrag_original": "-1,95",
+          "betrag_nummer": -1.95,
+          "valuta": "01.06.2022"
+        },
+        {
+          "datum": "31.05.2022",
+          "beschreibung": "Entgelte vom 30.04.2022 bis 31.05.2022",
+          "betrag_original": "1,95-",
+          "betrag_nummer": 1.95,
+          "valuta": "30.04.2022"
+        },
+        {
+          "datum": "31.05.2022",
+          "beschreibung": "Abrechnung",
+          "betrag_original": "1,95-",
+          "betrag_nummer": 1.95,
+          "valuta": "31.05.2022"
+        }
+      ],
+      "anzahl_transaktionen": 3,
+      "validierung": {
+        "anfangssaldo_nummer": 450105.96,
+        "transaktionen_summe_nummer": 1.95,
+        "berechneter_endsaldo": 450105.96,
+        "dokument_endsaldo_nummer": 450104.01,
+        "differenz": -1.95,
+        "validierung_ok": false
+      },
+      "conversion_validations": [
+        {
+          "original_string": "450.105,96",
+          "llm_converted": 450105.96,
+          "python_converted": 450105.96,
+          "conversion_match": true,
+          "difference": 0,
+          "field": "anfangssaldo"
+        },
+        {
+          "original_string": "450.104,01",
+          "llm_converted": 450104.01,
+          "python_converted": 450104.01,
+          "conversion_match": true,
+          "difference": 0,
+          "field": "endsaldo"
+        },
+        {
+          "original_string": "-1,95",
+          "llm_converted": -1.95,
+          "python_converted": -1.95,
+          "conversion_match": true,
+          "difference": 0,
+          "field": "transaktion_1"
+        },
+        {
+          "original_string": "1,95-",
+          "llm_converted": 1.95,
+          "python_converted": 0.0,
+          "conversion_match": false,
+          "difference": 1.95,
+          "field": "transaktion_2"
+        },
+        {
+          "original_string": "1,95-",
+          "llm_converted": 1.95,
+          "python_converted": 0.0,
+          "conversion_match": false,
+          "difference": 1.95,
+          "field": "transaktion_3"
+        }
+      ],
+      "python_validierung": {
+        "anfangssaldo": 450105.96,
+        "endsaldo_aus_dokument": 450104.01,
+        "transaktionen_summe": -1.95,
+        "berechneter_endsaldo": 450104.01,
+        "differenz": 0.0,
+        "validierung_ok": true,
+        "formel": "450105.96 + -1.95 = 450104.01",
+        "conversion_errors": 2,
+        "total_conversions": 5
+      }
+    },
+    {
+      "datei": "Konto_Auszug_2022_0006_result.json",
+      "auszug_nummer": "6",
+      "anfangssaldo": {
+        "betrag_original": "450.104,01",
+        "betrag_nummer": 450104.01,
+        "datum": "30.06.2022",
+        "referenz_auszug": "5",
+        "beschreibung": "Kontostand am 30.06.2022, Auszug Nr. 5"
+      },
+      "endsaldo": {
+        "betrag_original": "421.615,81",
+        "betrag_nummer": 421615.81,
+        "datum": "29.07.2022",
+        "uhrzeit": "20:07",
+        "beschreibung": "Kontostand am 29.07.2022 um 20:07 Uhr"
+      },
+      "transaktionen": [
+        {
+          "datum": "01.07.2022",
+          "beschreibung": "Abrechnung 30.06.2022",
+          "betrag_original": "-392,33",
+          "betrag_nummer": -392.33,
+          "valuta": "30.06.2022"
+        },
+        {
+          "datum": "01.07.2022",
+          "beschreibung": "Entgeltabrechnung",
+          "betrag_original": "-1,95",
+          "betrag_nummer": -1.95,
+          "valuta": "30.06.2022"
+        },
+        {
+          "datum": "05.07.2022",
+          "beschreibung": "Gutschriftseingang",
+          "betrag_original": "300,00",
+          "betrag_nummer": 300.0,
+          "valuta": "05.07.2022"
+        },
+        {
+          "datum": "12.07.2022",
+          "beschreibung": "Lastschr.Depotentgelt / Wert: 14.07.2022",
+          "betrag_original": "-5,95",
+          "betrag_nummer": -5.95,
+          "valuta": "14.07.2022"
+        },
+        {
+          "datum": "28.07.2022",
+          "beschreibung": "Wertpapierabrechnung / Wert: 29.07.2022",
+          "betrag_original": "-46.887,97",
+          "betrag_nummer": -46887.97,
+          "valuta": "29.07.2022"
+        },
+        {
+          "datum": "28.07.2022",
+          "beschreibung": "Gutschriftseingang",
+          "betrag_original": "18.500,00",
+          "betrag_nummer": 18500.0,
+          "valuta": "28.07.2022"
+        }
+      ],
+      "anzahl_transaktionen": 6,
+      "validierung": {
+        "anfangssaldo_nummer": 450104.01,
+        "transaktionen_summe_nummer": -392.33,
+        "berechneter_endsaldo": 450104.01,
+        "dokument_endsaldo_nummer": 421615.81,
+        "differenz": -27948.2,
+        "validierung_ok": false
+      },
+      "conversion_validations": [
+        {
+          "original_string": "450.104,01",
+          "llm_converted": 450104.01,
+          "python_converted": 450104.01,
+          "conversion_match": true,
+          "difference": 0,
+          "field": "anfangssaldo"
+        },
+        {
+          "original_string": "421.615,81",
+          "llm_converted": 421615.81,
+          "python_converted": 421615.81,
+          "conversion_match": true,
+          "difference": 0,
+          "field": "endsaldo"
+        },
+        {
+          "original_string": "-392,33",
+          "llm_converted": -392.33,
+          "python_converted": -392.33,
+          "conversion_match": true,
+          "difference": 0,
+          "field": "transaktion_1"
+        },
+        {
+          "original_string": "-1,95",
+          "llm_converted": -1.95,
+          "python_converted": -1.95,
+          "conversion_match": true,
+          "difference": 0,
+          "field": "transaktion_2"
+        },
+        {
+          "original_string": "300,00",
+          "llm_converted": 300.0,
+          "python_converted": 300.0,
+          "conversion_match": true,
+          "difference": 0,
+          "field": "transaktion_3"
+        },
+        {
+          "original_string": "-5,95",
+          "llm_converted": -5.95,
+          "python_converted": -5.95,
+          "conversion_match": true,
+          "difference": 0,
+          "field": "transaktion_4"
+        },
+        {
+          "original_string": "-46.887,97",
+          "llm_converted": -46887.97,
+          "python_converted": -46887.97,
+          "conversion_match": true,
+          "difference": 0,
+          "field": "transaktion_5"
+        },
+        {
+          "original_string": "18.500,00",
+          "llm_converted": 18500.0,
+          "python_converted": 18500.0,
+          "conversion_match": true,
+          "difference": 0,
+          "field": "transaktion_6"
+        }
+      ],
+      "python_validierung": {
+        "anfangssaldo": 450104.01,
+        "endsaldo_aus_dokument": 421615.81,
+        "transaktionen_summe": -28488.2,
+        "berechneter_endsaldo": 421615.81,
+        "differenz": 0.0,
+        "validierung_ok": true,
+        "formel": "450104.01 + -28488.20 = 421615.81",
+        "conversion_errors": 0,
+        "total_conversions": 8
+      }
+    },
+    {
+      "datei": "Konto_Auszug_2022_0007_result.json",
+      "auszug_nummer": "7",
+      "anfangssaldo": {
+        "betrag_original": "421.615,81",
+        "betrag_nummer": 421615.81,
+        "datum": "29.07.2022",
+        "referenz_auszug": "6",
+        "beschreibung": "Kontostand am 29.07.2022, Auszug Nr. 6"
+      },
+      "endsaldo": {
+        "betrag_original": "350.029,11",
+        "betrag_nummer": 350029.11,
+        "datum": "31.08.2022",
+        "uhrzeit": "20:09",
+        "beschreibung": "Kontostand am 31.08.2022 um 20:09 Uhr"
+      },
+      "transaktionen": [],
+      "anzahl_transaktionen": 0,
+      "validierung": {
+        "anfangssaldo_nummer": 421615.81,
+        "transaktionen_summe_nummer": -72084.75,
+        "berechneter_endsaldo": 349531.06,
+        "dokument_endsaldo_nummer": 350029.11,
+        "differenz": 498.05,
+        "validierung_ok": false
+      },
+      "conversion_validations": [
+        {
+          "original_string": "421.615,81",
+          "llm_converted": 421615.81,
+          "python_converted": 421615.81,
+          "conversion_match": true,
+          "difference": 0,
+          "field": "anfangssaldo"
+        },
+        {
+          "original_string": "350.029,11",
+          "llm_converted": 350029.11,
+          "python_converted": 350029.11,
+          "conversion_match": true,
+          "difference": 0,
+          "field": "endsaldo"
+        }
+      ],
+      "python_validierung": {
+        "anfangssaldo": 421615.81,
+        "endsaldo_aus_dokument": 350029.11,
+        "transaktionen_summe": 0.0,
+        "berechneter_endsaldo": 421615.81,
+        "differenz": 71586.7,
+        "validierung_ok": false,
+        "formel": "421615.81 + 0.00 = 421615.81",
+        "conversion_errors": 0,
+        "total_conversions": 2
+      }
+    }
+  ],
+  "anzahl_dokumente": 5,
+  "erfolgreiche_pruefungen": 3,
+  "gesamt_konvertierungsfehler": 2,
+  "kontinuitaet": {
+    "kontinuität_prüfungen": [
+      {
+        "auszug_von": "3",
+        "auszug_nach": "4",
+        "endsaldo_von": 405107.75,
+        "anfangssaldo_nach": 405107.75,
+        "kontinuität_ok": true,
+        "differenz": 0.0
+      },
+      {
+        "auszug_von": "4",
+        "auszug_nach": "5",
+        "endsaldo_von": 450105.96,
+        "anfangssaldo_nach": 450105.96,
+        "kontinuität_ok": true,
+        "differenz": 0.0
+      },
+      {
+        "auszug_von": "5",
+        "auszug_nach": "6",
+        "endsaldo_von": 450104.01,
+        "anfangssaldo_nach": 450104.01,
+        "kontinuität_ok": true,
+        "differenz": 0.0
+      },
+      {
+        "auszug_von": "6",
+        "auszug_nach": "7",
+        "endsaldo_von": 421615.81,
+        "anfangssaldo_nach": 421615.81,
+        "kontinuität_ok": true,
+        "differenz": 0.0
+      }
+    ],
+    "alle_ok": true
+  }
+}

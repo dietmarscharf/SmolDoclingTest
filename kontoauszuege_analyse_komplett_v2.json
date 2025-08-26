@@ -1,0 +1,338 @@
+{
+  "version": "2.0",
+  "beschreibung": "Detaillierte Analyse mit vollständiger Transaktionsextraktion und Saldenprüfung",
+  "analysen": [
+    {
+      "datei": "Konto_Auszug_2022_0003_result.json",
+      "kontonummer": "21503990",
+      "zeitraum": "01.04.2022-29.04.2022",
+      "anfangssaldo": {
+        "betrag": 391214.64,
+        "datum": "31.03.2022",
+        "beschreibung": "Kontostand am 31.03.2022, Auszug Nr. 2"
+      },
+      "endsaldo": {
+        "betrag": 405107.75,
+        "datum": "29.04.2022",
+        "beschreibung": "Kontostand am 29.04.2022 um 20:03 Uhr"
+      },
+      "transaktionen": [
+        {
+          "datum": "01.04.2022",
+          "beschreibung": "Abrechnung 31.03.2022",
+          "betrag": -170.86,
+          "typ": "Belastung"
+        },
+        {
+          "datum": "01.04.2022",
+          "beschreibung": "Entgeltabrechnung",
+          "betrag": -1.95,
+          "typ": "Belastung"
+        },
+        {
+          "datum": "06.04.2022",
+          "beschreibung": "Gutschriftseingang BLUEITS GMBH Übertrag von Girokonto auf Geldmarktkonto",
+          "betrag": 37000.0,
+          "typ": "Gutschrift"
+        },
+        {
+          "datum": "07.04.2022",
+          "beschreibung": "Wertpapierabrechnung / Wert: 08.04.2022",
+          "betrag": -101046.0,
+          "typ": "Belastung"
+        },
+        {
+          "datum": "07.04.2022",
+          "beschreibung": "Wertpapierabrechnung / Wert: 08.04.2022",
+          "betrag": -100480.0,
+          "typ": "Belastung"
+        },
+        {
+          "datum": "07.04.2022",
+          "beschreibung": "Gutschriftseingang DURCHLFD.SPERRBETRAEGE DEPOT 7274079 WERTPAPIERABRECHNUNG WKN A1CX3T VV TESLA INC.DL",
+          "betrag": 103924.6,
+          "typ": "Gutschrift"
+        },
+        {
+          "datum": "08.04.2022",
+          "beschreibung": "Gutschriftseingang BLUEITS GMBH",
+          "betrag": 10000.0,
+          "typ": "Gutschrift"
+        },
+        {
+          "datum": "12.04.2022",
+          "beschreibung": "Lastschr.Depotentgelt / Wert: 14.04.2022",
+          "betrag": -11.25,
+          "typ": "Belastung"
+        },
+        {
+          "datum": "28.04.2022",
+          "beschreibung": "Gutschriftseingang DURCHLFD. SPERRBETRÄGE DEPOTNR. 7274079 WKN A1CX3T ORDERNR. 5885460500 VERKAUF",
+          "betrag": 41989.54,
+          "typ": "Gutschrift"
+        },
+        {
+          "datum": "29.04.2022",
+          "beschreibung": "Überweisung/Übertrag BLUEITS GmbH Kontoübertrag",
+          "betrag": -20000.0,
+          "typ": "Belastung"
+        },
+        {
+          "datum": "29.04.2022",
+          "beschreibung": "Gutschriftseingang SPK AMBERG-SULZ DEPOT 7274079 WERTP. ABRECHN. 29.04.22 000005849461100 WKN A1CX3T GESCH.ART VV TESLA INC. DL -,001 US88160R1014",
+          "betrag": 42689.03,
+          "typ": "Gutschrift"
+        }
+      ],
+      "transaktionen_summe": 11685.44,
+      "berechneter_endsaldo": 402900.08,
+      "saldo_korrekt": false,
+      "saldo_differenz": 2107.75,
+      "anzahl_transaktionen": 11,
+      "wertpapiere": [
+        "WKN A1CX3T TESLA INC."
+      ],
+      "pruefung_vollstaendig": "OK",
+      "python_validierung": {
+        "anfangssaldo": 391214.64,
+        "transaktionen_summe": 11685.44,
+        "berechneter_endsaldo": 402900.08,
+        "tatsaechlicher_endsaldo": 405107.75,
+        "differenz": 2207.67,
+        "validierung_ok": false
+      }
+    },
+    {
+      "datei": "Konto_Auszug_2022_0004_result.json",
+      "kontonummer": "21503990",
+      "zeitraum": "01.04.2022-31.05.2022",
+      "anfangssaldo": {
+        "betrag": 40510775,
+        "datum": "29.04.2022",
+        "beschreibung": "Kontostand am 29.04.2022, Auszug Nr. 3"
+      },
+      "endsaldo": {
+        "betrag": 45010596,
+        "datum": "31.05.2022",
+        "beschreibung": "Kontostand am 31.05.2022 um 20:03 Uhr"
+      },
+      "transaktionen": [
+        {
+          "datum": "02.05.2022",
+          "beschreibung": "Entgeltabrechnung / Wert: 30.04.2022",
+          "betrag": -195,
+          "typ": "Belastung"
+        },
+        {
+          "datum": "16.05.2022",
+          "beschreibung": "Überweisung/Übertrag - BLUEITS GmbH Kontoübertrag",
+          "betrag": -2370000,
+          "typ": "Belastung"
+        },
+        {
+          "datum": "16.05.2022",
+          "beschreibung": "Gutschriftseingang - DURCHLFD.SPERRBETRAEGE DEPOT 7274079 WERTP.ABRECHNUNG 6059613800 WKN A1CX3T",
+          "betrag": 6870016,
+          "typ": "Gutschrift"
+        }
+      ],
+      "transaktionen_summe": -1950000,
+      "berechneter_endsaldo": 40510775,
+      "saldo_korrekt": false,
+      "saldo_differenz": 45010596,
+      "anzahl_transaktionen": 3,
+      "wertpapiere": [
+        "WKN A1CX3T"
+      ],
+      "pruefung_vollstaendig": "FEHLER: Beschreibung",
+      "python_validierung": {
+        "anfangssaldo": 40510775.0,
+        "transaktionen_summe": -1950000.0,
+        "berechneter_endsaldo": 38560775.0,
+        "tatsaechlicher_endsaldo": 45010596.0,
+        "differenz": 6449821.0,
+        "validierung_ok": false
+      }
+    },
+    {
+      "datei": "Konto_Auszug_2022_0005_result.json",
+      "kontonummer": "21503990",
+      "zeitraum": "01.06.2022-31.05.2022",
+      "anfangssaldo": {
+        "betrag": 450105.96,
+        "datum": "31.05.2022",
+        "beschreibung": "Kontostand am 31.05.2022, Auszug Nr. 4"
+      },
+      "endsaldo": {
+        "betrag": 450104.01,
+        "datum": "30.06.2022",
+        "beschreibung": "Kontostand am 30.06.2022 um 20:02 Uhr"
+      },
+      "transaktionen": [
+        {
+          "datum": "01.06.2022",
+          "beschreibung": "Entgeltabrechnung",
+          "betrag": -1.95,
+          "typ": "Belastung"
+        }
+      ],
+      "transaktionen_summe": -1.95,
+      "berechneter_endsaldo": 450105.96,
+      "saldo_korrekt": false,
+      "saldo_differenz": -1.95,
+      "anzahl_transaktionen": 1,
+      "wertpapiere": [],
+      "pruefung_vollstaendig": "OK",
+      "python_validierung": {
+        "anfangssaldo": 450105.96,
+        "transaktionen_summe": -1.95,
+        "berechneter_endsaldo": 450104.01,
+        "tatsaechlicher_endsaldo": 450104.01,
+        "differenz": 0.0,
+        "validierung_ok": true
+      }
+    },
+    {
+      "datei": "Konto_Auszug_2022_0006_result.json",
+      "kontonummer": "21503990",
+      "zeitraum": "01.07.2022 - 29.07.2022",
+      "anfangssaldo": {
+        "betrag": 450104.01,
+        "datum": "30.06.2022",
+        "beschreibung": "Kontostand am 30.06.2022, Auszug Nr. 5"
+      },
+      "endsaldo": {
+        "betrag": 421615.81,
+        "datum": "29.07.2022",
+        "beschreibung": "Kontostand am 29.07.2022 um 20:07 Uhr"
+      },
+      "transaktionen": [
+        {
+          "datum": "01.07.2022",
+          "beschreibung": "Abrechnung 30.06.2022",
+          "betrag": -392.33,
+          "typ": "Belastung"
+        },
+        {
+          "datum": "01.07.2022",
+          "beschreibung": "Entgeltabrechnung",
+          "betrag": -1.95,
+          "typ": "Belastung"
+        },
+        {
+          "datum": "05.07.2022",
+          "beschreibung": "Gutschriftseingang",
+          "betrag": 300.0,
+          "typ": "Gutschrift"
+        },
+        {
+          "datum": "12.07.2022",
+          "beschreibung": "Lastschr.Depotentgelt / Wert: 14.07.2022",
+          "betrag": -5.95,
+          "typ": "Belastung"
+        },
+        {
+          "datum": "28.07.2022",
+          "beschreibung": "Wertpapierabrechnung / Wert: 29.07.2022",
+          "betrag": -46887.97,
+          "typ": "Belastung"
+        },
+        {
+          "datum": "28.07.2022",
+          "beschreibung": "Gutschriftseingang",
+          "betrag": 18500.0,
+          "typ": "Gutschrift"
+        },
+        {
+          "datum": "28.07.2022",
+          "beschreibung": "Übertrag von Girokonto auf Geldmarktkonto",
+          "betrag": 0.0,
+          "typ": "Gutschrift"
+        }
+      ],
+      "transaktionen_summe": -46887.97,
+      "berechneter_endsaldo": 450104.01,
+      "saldo_korrekt": false,
+      "saldo_differenz": -28788.2,
+      "anzahl_transaktionen": 7,
+      "wertpapiere": [
+        "WKN A1CX3T GESCH.ART KV TESLA INC."
+      ],
+      "pruefung_vollstaendig": "FEHLER: Beschreibung",
+      "python_validierung": {
+        "anfangssaldo": 450104.01,
+        "transaktionen_summe": -46887.97,
+        "berechneter_endsaldo": 403216.04,
+        "tatsaechlicher_endsaldo": 421615.81,
+        "differenz": 18399.77,
+        "validierung_ok": false
+      }
+    },
+    {
+      "datei": "Konto_Auszug_2022_0007_result.json",
+      "kontonummer": "21503990",
+      "zeitraum": "01.08.2022 - 31.08.2022",
+      "anfangssaldo": {
+        "betrag": 42161581,
+        "datum": "29.07.2022",
+        "beschreibung": "Kontostand am 29.07.2022, Auszug Nr. 6"
+      },
+      "endsaldo": {
+        "betrag": 35002911,
+        "datum": "31.08.2022",
+        "beschreibung": "Kontostand am 31.08.2022 um 20:09 Uhr"
+      },
+      "transaktionen": [
+        {
+          "datum": "01.08.2022",
+          "beschreibung": "Wertpapierabrechnung / Wert: 02.08.2022",
+          "betrag": -8358475,
+          "typ": "Belastung"
+        },
+        {
+          "datum": "01.08.2022",
+          "beschreibung": "Wertpapierabrechnung / Wert: 02.08.2022",
+          "betrag": -3340000,
+          "typ": "Belastung"
+        },
+        {
+          "datum": "01.08.2022",
+          "beschreibung": "Entgeltabrechnung / Wert: 30.07.2022",
+          "betrag": -195,
+          "typ": "Belastung"
+        },
+        {
+          "datum": "01.08.2022",
+          "beschreibung": "Gutschriftseingang BLUEITS GMBH Übertrag von Girokonto auf Geldmark tkonto",
+          "betrag": 4300000,
+          "typ": "Gutschrift"
+        },
+        {
+          "datum": "09.08.2022",
+          "beschreibung": "Gutschriftseingang BLUEITS GMBH Übertrag von Girokonto auf Geldmark tkonto",
+          "betrag": 240000,
+          "typ": "Gutschrift"
+        }
+      ],
+      "transaktionen_summe": -8358475,
+      "berechneter_endsaldo": 42161581,
+      "saldo_korrekt": false,
+      "saldo_differenz": -7161581,
+      "anzahl_transaktionen": 5,
+      "wertpapiere": [
+        "A1CX3T - Tesla Inc. (DL)"
+      ],
+      "pruefung_vollstaendig": "FEHLER: Beschreibung",
+      "python_validierung": {
+        "anfangssaldo": 42161581.0,
+        "transaktionen_summe": -8358475.0,
+        "berechneter_endsaldo": 33803106.0,
+        "tatsaechlicher_endsaldo": 35002911.0,
+        "differenz": 1199805.0,
+        "validierung_ok": false
+      }
+    }
+  ],
+  "anzahl_dokumente": 5,
+  "timestamp": "1756161803.3344128"
+}

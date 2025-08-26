@@ -1,0 +1,357 @@
+{
+  "version": "7.0",
+  "beschreibung": "Korrigierte LLM-Summierung mit expliziten Anweisungen",
+  "model": "qwen3:8b",
+  "verbesserungen": [
+    "Explizite Summierungsanweisungen für LLM",
+    "Detaillierte Beispiele mit Mehrfach-Transaktionen",
+    "Korrekte Berechnung von plus_transaktionen",
+    "Vergleich LLM vs Python Summierung",
+    "Verbesserte Fehlerdiagnose"
+  ],
+  "analysen": [
+    {
+      "datei": "Konto_Auszug_2022_0003_result.json",
+      "schritt1_auszugsnummer": 3,
+      "auszug_nummer": 3,
+      "kontodaten": {},
+      "schritt2_anfangssaldo": "",
+      "anfangssaldo": {
+        "betrag": 391214.64,
+        "betrag_text": "391.214,64 EUR",
+        "datum": "",
+        "auszug_nr_referenz": "",
+        "beschreibung": ""
+      },
+      "schritt3_endsaldo": "",
+      "endsaldo": {
+        "betrag": 405107.75,
+        "betrag_text": "405.107,75 EUR",
+        "datum": "",
+        "uhrzeit": "",
+        "beschreibung": ""
+      },
+      "schritt4_transaktionen": "",
+      "transaktionen": [
+        {
+          "datum": "2022-04-01",
+          "erläuterung": "Abrechnung 31.03.2022",
+          "betrag": -170.86
+        },
+        {
+          "datum": "2022-04-01",
+          "erläuterung": "Entgeltabrechnung",
+          "betrag": -1.95
+        },
+        {
+          "datum": "2022-04-06",
+          "erläuterung": "Gutschriftseingang",
+          "betrag": 37000.0
+        },
+        {
+          "datum": "2022-04-07",
+          "erläuterung": "Wertpapierabrechnung / Wert: 08.04.2022",
+          "betrag": -101046.0
+        },
+        {
+          "datum": "2022-04-07",
+          "erläuterung": "Wertpapierabrechnung / Wert: 08.04.2022",
+          "betrag": -100480.0
+        },
+        {
+          "datum": "2022-04-07",
+          "erläuterung": "Gutschriftseingang",
+          "betrag": 103924.6
+        },
+        {
+          "datum": "2022-04-08",
+          "erläuterung": "Gutschriftseingang",
+          "betrag": 10000.0
+        },
+        {
+          "datum": "2022-04-12",
+          "erläuterung": "Lastschr.Depotentgelt / Wert: 14.04.2022",
+          "betrag": -11.25
+        },
+        {
+          "datum": "2022-04-28",
+          "erläuterung": "Gutschriftseingang",
+          "betrag": 41989.54
+        },
+        {
+          "datum": "2022-04-29",
+          "erläuterung": "Überweisung/Übertrag",
+          "betrag": -20000.0
+        },
+        {
+          "datum": "2022-04-29",
+          "erläuterung": "Gutschriftseingang",
+          "betrag": 42689.03
+        }
+      ],
+      "anzahl_transaktionen": 11,
+      "transaktionen_summe": 13893.11,
+      "schritt5_validierung": {},
+      "python_validierung": {
+        "anfangssaldo": 391214.64,
+        "endsaldo_aus_dokument": 405107.75,
+        "transaktionen_summe": 13893.11,
+        "berechneter_endsaldo": 405107.75,
+        "differenz": 0.0,
+        "validierung_ok": true,
+        "formel": "391214.64 + 13893.11 = 405107.75"
+      }
+    },
+    {
+      "datei": "Konto_Auszug_2022_0004_result.json",
+      "schritt1_auszugsnummer": 4,
+      "auszug_nummer": 4,
+      "kontodaten": {},
+      "schritt2_anfangssaldo": "",
+      "anfangssaldo": "405107.75",
+      "schritt3_endsaldo": "",
+      "endsaldo": "450105.96",
+      "schritt4_transaktionen": "",
+      "transaktionen": [
+        {
+          "datum": "02.05.2022",
+          "erlaeuterng": "Entgeltabrechnung / Wert: 30.04.2022",
+          "betrag": "-1.95"
+        },
+        {
+          "datum": "16.05.2022",
+          "erlaeuterng": "Überweisung/Übertrag",
+          "betrag": "-23700.00"
+        },
+        {
+          "datum": "16.05.2022",
+          "erlaeuterng": "Gutschriftseingang",
+          "betrag": "+68700.16"
+        },
+        {
+          "datum": "16.05.2022",
+          "erlaeuterng": "DURCHLFD.SPERRBETRAEGE DEPOT 7274079 WERTP.ABRECHNUNG 6059613800 WKN A1CX3T",
+          "betrag": "0"
+        }
+      ],
+      "anzahl_transaktionen": 4,
+      "transaktionen_summe": "44998.21",
+      "schritt5_validierung": {
+        "anfangssaldo_plus_transaktionen": "405107.75 + 44998.21 = 450105.96",
+        "entspricht_endsaldo": true
+      },
+      "python_validierung": {
+        "anfangssaldo": 405107.75,
+        "endsaldo_aus_dokument": 450105.96,
+        "transaktionen_summe": 44998.21,
+        "berechneter_endsaldo": 450105.96,
+        "differenz": 0.0,
+        "validierung_ok": true,
+        "formel": "405107.75 + 44998.21 = 450105.96"
+      }
+    },
+    {
+      "datei": "Konto_Auszug_2022_0005_result.json",
+      "schritt1_auszugsnummer": 5,
+      "auszug_nummer": 5,
+      "kontodaten": {},
+      "schritt2_anfangssaldo": "",
+      "anfangssaldo": "450105.96",
+      "schritt3_endsaldo": "",
+      "endsaldo": "450104.01",
+      "schritt4_transaktionen": "",
+      "transaktionen": [
+        {
+          "datum": "01.06.2022",
+          "erlaeuterng": "Entgeltabrechnung",
+          "betrag": "-1,95"
+        }
+      ],
+      "anzahl_transaktionen": 1,
+      "transaktionen_summe": "-1,95",
+      "schritt5_validierung": {
+        "anfangssaldo_plus_transaktionen": "450105.96-1,95",
+        "erwartetes_endsaldo": "450104.01"
+      },
+      "python_validierung": {
+        "anfangssaldo": 450105.96,
+        "endsaldo_aus_dokument": 450104.01,
+        "transaktionen_summe": -1.95,
+        "berechneter_endsaldo": 450104.01,
+        "differenz": 0.0,
+        "validierung_ok": true,
+        "formel": "450105.96 + -1.95 = 450104.01"
+      }
+    },
+    {
+      "datei": "Konto_Auszug_2022_0006_result.json",
+      "schritt1_auszugsnummer": 6,
+      "auszug_nummer": 6,
+      "kontodaten": {},
+      "schritt2_anfangssaldo": "",
+      "anfangssaldo": {
+        "betrag": 450104.01,
+        "betrag_text": "450.104,01 EUR",
+        "datum": "",
+        "auszug_nr_referenz": "",
+        "beschreibung": ""
+      },
+      "schritt3_endsaldo": "",
+      "endsaldo": {
+        "betrag": 421615.81,
+        "betrag_text": "421.615,81 EUR",
+        "datum": "",
+        "uhrzeit": "",
+        "beschreibung": ""
+      },
+      "schritt4_transaktionen": "",
+      "transaktionen": [
+        {
+          "datum": "2022-07-01",
+          "erlaeuterung": "Abrechnung 30.06.2022",
+          "betrag": -392.33
+        },
+        {
+          "datum": "2022-07-01",
+          "erlaeuterung": "Entgeltabrechnung",
+          "betrag": -1.95
+        },
+        {
+          "datum": "2022-07-05",
+          "erlaeuterung": "Gutschriftseingang",
+          "betrag": 300.0
+        },
+        {
+          "datum": "2022-07-12",
+          "erlaeuterung": "Lastschr.Depotentgelt / Wert: 14.07.2022",
+          "betrag": -5.95
+        },
+        {
+          "datum": "2022-07-28",
+          "erlaeuterung": "Wertpapierabrechnung / Wert: 29.07.2022",
+          "betrag": -46887.97
+        },
+        {
+          "datum": "2022-07-28",
+          "erlaeuterung": "Gutschriftseingang",
+          "betrag": 18500.0
+        },
+        {
+          "datum": "2022-07-28",
+          "erlaeuterung": "Übertrag von Girokonto auf Geldmark tkonto",
+          "betrag": 0.0
+        }
+      ],
+      "anzahl_transaktionen": 7,
+      "transaktionen_summe": 13893.11,
+      "schritt5_validierung": {
+        "anfangssaldo_plus_transaktionen": 450104.01,
+        "transaktionen_summe": 13893.11,
+        "endsaldo": 421615.81,
+        "erwartetes_endsaldo": 421615.81
+      },
+      "python_validierung": {
+        "anfangssaldo": 450104.01,
+        "endsaldo_aus_dokument": 421615.81,
+        "transaktionen_summe": -28488.2,
+        "berechneter_endsaldo": 421615.81,
+        "differenz": 0.0,
+        "validierung_ok": true,
+        "formel": "450104.01 + -28488.20 = 421615.81"
+      }
+    },
+    {
+      "datei": "Konto_Auszug_2022_0007_result.json",
+      "schritt1_auszugsnummer": 7,
+      "auszug_nummer": 7,
+      "kontodaten": {},
+      "schritt2_anfangssaldo": "",
+      "anfangssaldo": "421615.81",
+      "schritt3_endsaldo": "",
+      "endsaldo": "350029.11",
+      "schritt4_transaktionen": "",
+      "transaktionen": [
+        {
+          "datum": "01.08.2022",
+          "erläuterung": "Wertpapierabrechnung / Wert: 02.08.2022",
+          "betrag": "-83584.75"
+        },
+        {
+          "datum": "01.08.2022",
+          "erläuterung": "Wertpapierabrechnung / Wert: 02.08.2022",
+          "betrag": "-33400.00"
+        },
+        {
+          "datum": "01.08.2022",
+          "erläuterung": "Entgeltabrechnung / Wert: 30.07.2022",
+          "betrag": "-1.95"
+        },
+        {
+          "datum": "01.08.2022",
+          "erläuterung": "Gutschriftseingang",
+          "betrag": "+43000.00"
+        },
+        {
+          "datum": "09.08.2022",
+          "erläuterung": "Gutschriftseingang",
+          "betrag": "+2400.00"
+        }
+      ],
+      "anzahl_transaktionen": 5,
+      "transaktionen_summe": "-149984.75",
+      "schritt5_validierung": {
+        "anfangssaldo_plus_transaktionen": "421615.81 + 149984.75 = 421615.81 + 149984.75 = 571600.56",
+        "endsaldo": "350029.11",
+        "valid": false
+      },
+      "python_validierung": {
+        "anfangssaldo": 421615.81,
+        "endsaldo_aus_dokument": 350029.11,
+        "transaktionen_summe": -71586.7,
+        "berechneter_endsaldo": 350029.11,
+        "differenz": 0.0,
+        "validierung_ok": true,
+        "formel": "421615.81 + -71586.70 = 350029.11"
+      }
+    }
+  ],
+  "anzahl_dokumente": 5,
+  "erfolgreiche_pruefungen": 2,
+  "kontinuitaet": {
+    "kontinuität_prüfungen": [
+      {
+        "auszug_von": 3,
+        "auszug_nach": 4,
+        "endsaldo_von": 405107.75,
+        "anfangssaldo_nach": 405107.75,
+        "kontinuität_ok": true,
+        "differenz": 0.0
+      },
+      {
+        "auszug_von": 4,
+        "auszug_nach": 5,
+        "endsaldo_von": 450105.96,
+        "anfangssaldo_nach": 450105.96,
+        "kontinuität_ok": true,
+        "differenz": 0.0
+      },
+      {
+        "auszug_von": 5,
+        "auszug_nach": 6,
+        "endsaldo_von": 450104.01,
+        "anfangssaldo_nach": 450104.01,
+        "kontinuität_ok": true,
+        "differenz": 0.0
+      },
+      {
+        "auszug_von": 6,
+        "auszug_nach": 7,
+        "endsaldo_von": 421615.81,
+        "anfangssaldo_nach": 421615.81,
+        "kontinuität_ok": true,
+        "differenz": 0.0
+      }
+    ],
+    "alle_ok": true
+  }
+}

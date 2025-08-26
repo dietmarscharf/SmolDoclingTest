@@ -1,0 +1,537 @@
+{
+  "version": "6.0",
+  "beschreibung": "Perfektionierte Extraktion mit Schritt-für-Schritt Logik",
+  "model": "qwen3:8b",
+  "verbesserungen": [
+    "Schritt-für-Schritt Extraktion",
+    "Korrekte Auszugsnummer-Referenzierung",
+    "Kontinuitätsprüfung zwischen Auszügen",
+    "Erweiterte Transaktionsklassifikation",
+    "Präzise Beispiele für jeden Auszugstyp"
+  ],
+  "analysen": [
+    {
+      "datei": "Konto_Auszug_2022_0003_result.json",
+      "schritt1_auszugsnummer": "Extrahiere aus 'Kontoauszug X/2022'",
+      "auszug_nummer": "3",
+      "kontodaten": {
+        "kontonummer": "21503990",
+        "kontoinhaber": "BLUEITS GmbH",
+        "bank": "Sparkasse Amberg-Sulzbach",
+        "kontoart": "Geldmarktkonto"
+      },
+      "schritt2_anfangssaldo": "Erkläre welche Zeile der Anfangssaldo ist",
+      "anfangssaldo": {
+        "betrag": 391214.64,
+        "betrag_text": "391.214,64 EUR",
+        "datum": "31.03.2022",
+        "auszug_nr_referenz": "2",
+        "beschreibung": "Kontostand am 31.03.2022, Auszug Nr. 2"
+      },
+      "schritt3_endsaldo": "Erkläre welche Zeile der Endsaldo ist",
+      "endsaldo": {
+        "betrag": 405107.75,
+        "betrag_text": "405.107,75 EUR",
+        "datum": "29.04.2022",
+        "uhrzeit": "20:03",
+        "beschreibung": "Kontostand am 29.04.2022 um 20:03 Uhr"
+      },
+      "schritt4_transaktionen": "Liste NUR echte Transaktionen",
+      "transaktionen": [
+        {
+          "nr": 1,
+          "buchungsdatum": "01.04.2022",
+          "valuta": "31.03.2022",
+          "art": "Abrechnung",
+          "beschreibung": "Abrechnung",
+          "betrag": -170.86,
+          "betrag_text": "-170,86"
+        },
+        {
+          "nr": 2,
+          "buchungsdatum": "01.04.2022",
+          "valuta": null,
+          "art": "Entgeltabrechnung",
+          "beschreibung": "Entgeltabrechnung",
+          "betrag": -1.95,
+          "betrag_text": "-1,95"
+        },
+        {
+          "nr": 3,
+          "buchungsdatum": "06.04.2022",
+          "valuta": null,
+          "art": "Gutschrift",
+          "beschreibung": "Gutschriftseingang",
+          "betrag": 37000.0,
+          "betrag_text": "37.000,00"
+        },
+        {
+          "nr": 4,
+          "buchungsdatum": "07.04.2022",
+          "valuta": "08.04.2022",
+          "art": "Wertpapierabrechnung",
+          "beschreibung": "Wertpapierabrechnung / Wert: 08.04.2022",
+          "betrag": -101046.0,
+          "betrag_text": "-101.046,00"
+        },
+        {
+          "nr": 5,
+          "buchungsdatum": "07.04.2022",
+          "valuta": "08.04.2022",
+          "art": "Wertpapierabrechnung",
+          "beschreibung": "Wertpapierabrechnung / Wert: 08.04.2022",
+          "betrag": -100480.0,
+          "betrag_text": "-100.480,00"
+        },
+        {
+          "nr": 6,
+          "buchungsdatum": "07.04.2022",
+          "valuta": null,
+          "art": "Gutschrift",
+          "beschreibung": "Gutschriftseingang",
+          "betrag": 103924.6,
+          "betrag_text": "103.924,60"
+        },
+        {
+          "nr": 7,
+          "buchungsdatum": "08.04.2022",
+          "valuta": null,
+          "art": "Gutschrift",
+          "beschreibung": "Gutschriftseingang",
+          "betrag": 10000.0,
+          "betrag_text": "10.000,00"
+        },
+        {
+          "nr": 8,
+          "buchungsdatum": "12.04.2022",
+          "valuta": "14.04.2022",
+          "art": "Lastschrift",
+          "beschreibung": "Lastschr.Depotentgelt / Wert: 14.04.2022",
+          "betrag": -11.25,
+          "betrag_text": "-11,25"
+        },
+        {
+          "nr": 9,
+          "buchungsdatum": "28.04.2022",
+          "valuta": null,
+          "art": "Gutschrift",
+          "beschreibung": "Gutschriftseingang",
+          "betrag": 41989.54,
+          "betrag_text": "41.989,54"
+        },
+        {
+          "nr": 10,
+          "buchungsdatum": "29.04.2022",
+          "valuta": null,
+          "art": "Überweisung ausgehend",
+          "beschreibung": "Überweisung/Übertrag",
+          "betrag": -20000.0,
+          "betrag_text": "-20.000,00"
+        },
+        {
+          "nr": 11,
+          "buchungsdatum": "29.04.2022",
+          "valuta": null,
+          "art": "Gutschrift",
+          "beschreibung": "Gutschriftseingang",
+          "betrag": 42689.03,
+          "betrag_text": "42.689,03"
+        }
+      ],
+      "anzahl_transaktionen": 11,
+      "transaktionen_summe": -170.86,
+      "schritt5_validierung": {
+        "rechnung": "391214.64 + (-170.86) + (-1.95) + 37000.00 + (-101046.00) + (-100480.00) + 103924.60 + 10000.00 + (-11.25) + 41989.54 + (-20000.00) + 42689.03 = 405107.75",
+        "anfangssaldo": 391214.64,
+        "plus_transaktionen": -170.86,
+        "ergibt": 391043.78,
+        "dokument_endsaldo": 405107.75,
+        "differenz": 14063.97,
+        "prüfung_ok": false
+      },
+      "python_validierung": {
+        "anfangssaldo": 391214.64,
+        "endsaldo_aus_dokument": 405107.75,
+        "transaktionen_summe": 13893.11,
+        "berechneter_endsaldo": 405107.75,
+        "differenz": 0.0,
+        "validierung_ok": true,
+        "formel": "391214.64 + 13893.11 = 405107.75"
+      }
+    },
+    {
+      "datei": "Konto_Auszug_2022_0004_result.json",
+      "schritt1_auszugsnummer": "Kontoauszug 4/2022",
+      "auszug_nummer": "4",
+      "kontodaten": {
+        "kontonummer": "21503990",
+        "kontoinhaber": "BLUEITS GmbH",
+        "bank": "Sparkasse Amberg-Sulzbach",
+        "kontoart": "Geldmarktkonto"
+      },
+      "schritt2_anfangssaldo": "Kontostand am 29.04.2022, Auszug Nr. 3",
+      "anfangssaldo": {
+        "betrag": 405107.75,
+        "betrag_text": "405.107,75 EUR",
+        "datum": "29.04.2022",
+        "auszug_nr_referenz": "3",
+        "beschreibung": "Kontostand am 29.04.2022, Auszug Nr. 3"
+      },
+      "schritt3_endsaldo": "Kontostand am 31.05.2022 um 20:03 Uhr",
+      "endsaldo": {
+        "betrag": 450105.96,
+        "betrag_text": "450.105,96 EUR",
+        "datum": "31.05.2022",
+        "uhrzeit": "20:03",
+        "beschreibung": "Kontostand am 31.05.2022 um 20:03 Uhr"
+      },
+      "schritt4_transaktionen": "Transaktionen zwischen 29.04.2022 und 31.05.2022",
+      "transaktionen": [
+        {
+          "nr": 1,
+          "buchungsdatum": "02.05.2022",
+          "valuta": "30.04.2022",
+          "art": "Entgeltabrechnung",
+          "beschreibung": "Entgeltabrechnung / Wert: 30.04.2022",
+          "betrag": -1.95,
+          "betrag_text": "-1,95"
+        },
+        {
+          "nr": 2,
+          "buchungsdatum": "16.05.2022",
+          "valuta": null,
+          "art": "Überweisung ausgehend",
+          "beschreibung": "Überweisung/Übertrag -23.700,00 BLUEITS GmbH Kontoübertrag",
+          "betrag": -23700.0,
+          "betrag_text": "-23.700,00"
+        },
+        {
+          "nr": 3,
+          "buchungsdatum": "16.05.2022",
+          "valuta": null,
+          "art": "Gutschrift",
+          "beschreibung": "Gutschriftseingang 68.700,16",
+          "betrag": 68700.16,
+          "betrag_text": "68.700,16"
+        }
+      ],
+      "anzahl_transaktionen": 3,
+      "transaktionen_summe": 44703.16,
+      "schritt5_validierung": {
+        "rechnung": "405107.75 + (-1.95) + (-23700.00) + 68700.16 = 450105.96",
+        "anfangssaldo": 405107.75,
+        "plus_transaktionen": -1.95,
+        "ergibt": 405105.8,
+        "dokument_endsaldo": 450105.96,
+        "differenz": -1.96,
+        "prüfung_ok": false
+      },
+      "python_validierung": {
+        "anfangssaldo": 405107.75,
+        "endsaldo_aus_dokument": 450105.96,
+        "transaktionen_summe": 44998.21,
+        "berechneter_endsaldo": 450105.96,
+        "differenz": 0.0,
+        "validierung_ok": true,
+        "formel": "405107.75 + 44998.21 = 450105.96"
+      }
+    },
+    {
+      "datei": "Konto_Auszug_2022_0005_result.json",
+      "schritt1_auszugsnummer": "Kontoauszug 5/2022",
+      "auszug_nummer": "5",
+      "kontodaten": {
+        "kontonummer": "21503990",
+        "kontoinhaber": "BLUEITS GmbH",
+        "bank": "Sparkasse Amberg-Sulzbach",
+        "kontoart": "Geldmarktkonto"
+      },
+      "schritt2_anfangssaldo": "Kontostand am 31.05.2022, Auszug Nr. 4",
+      "anfangssaldo": {
+        "betrag": 450105.96,
+        "betrag_text": "450.105,96 EUR",
+        "datum": "31.05.2022",
+        "auszug_nr_referenz": "4",
+        "beschreibung": "Kontostand am 31.05.2022, Auszug Nr. 4"
+      },
+      "schritt3_endsaldo": "Kontostand am 30.06.2022 um 20:02 Uhr",
+      "endsaldo": {
+        "betrag": 450104.01,
+        "betrag_text": "450.104,01 EUR",
+        "datum": "30.06.2022",
+        "uhrzeit": "20:02",
+        "beschreibung": "Kontostand am 30.06.2022 um 20:02 Uhr"
+      },
+      "schritt4_transaktionen": "Entgeltabrechnung",
+      "transaktionen": [
+        {
+          "nr": 1,
+          "buchungsdatum": "01.06.2022",
+          "valuta": null,
+          "art": "Entgeltabrechnung",
+          "beschreibung": "Entgeltabrechnung",
+          "betrag": -1.95,
+          "betrag_text": "-1,95"
+        }
+      ],
+      "anzahl_transaktionen": 1,
+      "transaktionen_summe": -1.95,
+      "schritt5_validierung": {
+        "rechnung": "450105.96 + (-1.95) = 450104.01",
+        "anfangssaldo": 450105.96,
+        "plus_transaktionen": -1.95,
+        "ergibt": 450104.01,
+        "dokument_endsaldo": 450104.01,
+        "differenz": 0.0,
+        "prüfung_ok": true
+      },
+      "python_validierung": {
+        "anfangssaldo": 450105.96,
+        "endsaldo_aus_dokument": 450104.01,
+        "transaktionen_summe": -1.95,
+        "berechneter_endsaldo": 450104.01,
+        "differenz": 0.0,
+        "validierung_ok": true,
+        "formel": "450105.96 + -1.95 = 450104.01"
+      }
+    },
+    {
+      "datei": "Konto_Auszug_2022_0006_result.json",
+      "schritt1_auszugsnummer": "Extrahiere aus 'Kontoauszug X/2022'",
+      "auszug_nummer": "6",
+      "kontodaten": {
+        "kontonummer": "21503990",
+        "kontoinhaber": "BLUEITS GmbH",
+        "bank": "Sparkasse Amberg-Sulzbach",
+        "kontoart": "Geldmarktkonto"
+      },
+      "schritt2_anfangssaldo": "Erkläre welche Zeile der Anfangssaldo ist",
+      "anfangssaldo": {
+        "betrag": 450104.01,
+        "betrag_text": "450.104,01 EUR",
+        "datum": "30.06.2022",
+        "auszug_nr_referenz": "5",
+        "beschreibung": "Kontostand am 30.06.2022, Auszug Nr. 5"
+      },
+      "schritt3_endsaldo": "Erkläre welche Zeile der Endsaldo ist",
+      "endsaldo": {
+        "betrag": 421615.81,
+        "betrag_text": "421.615,81 EUR",
+        "datum": "29.07.2022",
+        "uhrzeit": "20:07",
+        "beschreibung": "Kontostand am 29.07.2022 um 20:07 Uhr"
+      },
+      "schritt4_transaktionen": "Liste NUR echte Transaktionen",
+      "transaktionen": [
+        {
+          "nr": 1,
+          "buchungsdatum": "01.07.2022",
+          "valuta": "01.07.2022",
+          "art": "Abrechnung",
+          "beschreibung": "Abrechnung 30.06.2022",
+          "betrag": -392.33,
+          "betrag_text": "-392,33"
+        },
+        {
+          "nr": 2,
+          "buchungsdatum": "01.07.2022",
+          "valuta": "01.07.2022",
+          "art": "Entgeltabrechnung",
+          "beschreibung": "Entgeltabrechnung",
+          "betrag": -1.95,
+          "betrag_text": "-1,95"
+        },
+        {
+          "nr": 3,
+          "buchungsdatum": "05.07.2022",
+          "valuta": "05.07.2022",
+          "art": "Gutschrift",
+          "beschreibung": "Gutschriftseingang",
+          "betrag": 300.0,
+          "betrag_text": "300,00"
+        },
+        {
+          "nr": 4,
+          "buchungsdatum": "12.07.2022",
+          "valuta": "12.07.2022",
+          "art": "Lastschrift",
+          "beschreibung": "Lastschr.Depotentgelt / Wert: 14.07.2022",
+          "betrag": -5.95,
+          "betrag_text": "-5,95"
+        },
+        {
+          "nr": 5,
+          "buchungsdatum": "28.07.2022",
+          "valuta": "28.07.2022",
+          "art": "Wertpapierabrechnung",
+          "beschreibung": "Wertpapierabrechnung / Wert: 29.07.2022",
+          "betrag": -46887.97,
+          "betrag_text": "-46.887,97"
+        },
+        {
+          "nr": 6,
+          "buchungsdatum": "28.07.2022",
+          "valuta": "28.07.2022",
+          "art": "Gutschrift",
+          "beschreibung": "Gutschriftseingang",
+          "betrag": 18500.0,
+          "betrag_text": "18.500,00"
+        }
+      ],
+      "anzahl_transaktionen": 6,
+      "transaktionen_summe": -46887.97,
+      "schritt5_validierung": {
+        "rechnung": "450104.01 + (-392.33) + (-1.95) + 300.00 + (-5.95) + (-46887.97) + 18500.00 = 421615.81",
+        "anfangssaldo": 450104.01,
+        "plus_transaktionen": -46887.97,
+        "ergibt": 421615.81,
+        "dokument_endsaldo": 421615.81,
+        "differenz": 0.0,
+        "prüfung_ok": true
+      },
+      "python_validierung": {
+        "anfangssaldo": 450104.01,
+        "endsaldo_aus_dokument": 421615.81,
+        "transaktionen_summe": -28488.2,
+        "berechneter_endsaldo": 421615.81,
+        "differenz": 0.0,
+        "validierung_ok": true,
+        "formel": "450104.01 + -28488.20 = 421615.81"
+      }
+    },
+    {
+      "datei": "Konto_Auszug_2022_0007_result.json",
+      "schritt1_auszugsnummer": "Extrahiere aus 'Kontoauszug X/2022'",
+      "auszug_nummer": "7",
+      "kontodaten": {
+        "kontonummer": "21503990",
+        "kontoinhaber": "BLUEITS GmbH",
+        "bank": "Sparkasse Amberg-Sulzbach",
+        "kontoart": "Geldmarktkonto"
+      },
+      "schritt2_anfangssaldo": "Erkläre welche Zeile der Anfangssaldo ist",
+      "anfangssaldo": {
+        "betrag": 421615.81,
+        "betrag_text": "421.615,81 EUR",
+        "datum": "29.07.2022",
+        "auszug_nr_referenz": "6",
+        "beschreibung": "Kontostand am 29.07.2022, Auszug Nr. 6"
+      },
+      "schritt3_endsaldo": "Erkläre welche Zeile der Endsaldo ist",
+      "endsaldo": {
+        "betrag": 350029.11,
+        "betrag_text": "350.029,11 EUR",
+        "datum": "31.08.2022",
+        "uhrzeit": "20:09",
+        "beschreibung": "Kontostand am 31.08.2022 um 20:09 Uhr"
+      },
+      "schritt4_transaktionen": "Liste NUR echte Transaktionen",
+      "transaktionen": [
+        {
+          "nr": 1,
+          "buchungsdatum": "01.08.2022",
+          "valuta": "02.08.2022",
+          "art": "Wertpapierabrechnung",
+          "beschreibung": "Wertpapierabrechnung / Wert: 02.08.2022",
+          "betrag": -83584.75,
+          "betrag_text": "-83.584,75"
+        },
+        {
+          "nr": 2,
+          "buchungsdatum": "01.08.2022",
+          "valuta": "02.08.2022",
+          "art": "Wertpapierabrechnung",
+          "beschreibung": "Wertpapierabrechnung / Wert: 02.08.2022",
+          "betrag": -33400.0,
+          "betrag_text": "-33.400,00"
+        },
+        {
+          "nr": 3,
+          "buchungsdatum": "01.08.2022",
+          "valuta": "30.07.2022",
+          "art": "Entgeltabrechnung",
+          "beschreibung": "Entgeltabrechnung / Wert: 30.07.2022",
+          "betrag": -1.95,
+          "betrag_text": "-1,95"
+        },
+        {
+          "nr": 4,
+          "buchungsdatum": "01.08.2022",
+          "valuta": null,
+          "art": "Gutschrift",
+          "beschreibung": "Gutschriftseingang",
+          "betrag": 43000.0,
+          "betrag_text": "43.000,00"
+        },
+        {
+          "nr": 5,
+          "buchungsdatum": "09.08.2022",
+          "valuta": null,
+          "art": "Gutschrift",
+          "beschreibung": "Gutschriftseingang",
+          "betrag": 2400.0,
+          "betrag_text": "2.400,00"
+        }
+      ],
+      "anzahl_transaktionen": 5,
+      "transaktionen_summe": -150006.69,
+      "schritt5_validierung": {
+        "rechnung": "421615.81 + (-150006.69) = 350029.11",
+        "anfangssaldo": 421615.81,
+        "plus_transaktionen": -150006.69,
+        "ergibt": 350029.11,
+        "dokument_endsaldo": 350029.11,
+        "differenz": 0.0,
+        "prüfung_ok": true
+      },
+      "python_validierung": {
+        "anfangssaldo": 421615.81,
+        "endsaldo_aus_dokument": 350029.11,
+        "transaktionen_summe": -71586.7,
+        "berechneter_endsaldo": 350029.11,
+        "differenz": 0.0,
+        "validierung_ok": true,
+        "formel": "421615.81 + -71586.70 = 350029.11"
+      }
+    }
+  ],
+  "anzahl_dokumente": 5,
+  "erfolgreiche_pruefungen": 5,
+  "kontinuitaet": {
+    "kontinuität_prüfungen": [
+      {
+        "auszug_von": "3",
+        "auszug_nach": "4",
+        "endsaldo_von": 405107.75,
+        "anfangssaldo_nach": 405107.75,
+        "kontinuität_ok": true,
+        "differenz": 0.0
+      },
+      {
+        "auszug_von": "4",
+        "auszug_nach": "5",
+        "endsaldo_von": 450105.96,
+        "anfangssaldo_nach": 450105.96,
+        "kontinuität_ok": true,
+        "differenz": 0.0
+      },
+      {
+        "auszug_von": "5",
+        "auszug_nach": "6",
+        "endsaldo_von": 450104.01,
+        "anfangssaldo_nach": 450104.01,
+        "kontinuität_ok": true,
+        "differenz": 0.0
+      },
+      {
+        "auszug_von": "6",
+        "auszug_nach": "7",
+        "endsaldo_von": 421615.81,
+        "anfangssaldo_nach": 421615.81,
+        "kontinuität_ok": true,
+        "differenz": 0.0
+      }
+    ],
+    "alle_ok": true
+  }
+}
