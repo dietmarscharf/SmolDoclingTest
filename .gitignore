@@ -1,0 +1,31 @@
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+venv/
+ENV/
+env/
+.venv
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# Project specific
+*.pdf
+*.log
+.DS_Store
+
+# Temporary files
+*.tmp
+*.bak
+*~
+
+# API keys / Secrets
+.env
+config.ini
+secrets.json
